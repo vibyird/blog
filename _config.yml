@@ -65,13 +65,20 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: next
 
-# 在归档页面显示所有文章
-# 需要上面安装的 hexo-generator-archive 插件支持
+# Category generator plugin
+category_generator:
+  per_page: 10
+
+# Archive generator plugin
 archive_generator:
-    per_page: 0
-    yearly: false
-    monthly: false
-    daily: false
+  per_page: 10
+  yearly: true
+  monthly: true
+  daily: false
+
+# Tag generator plugin
+tag_generator:
+  per_page: 10
 
 # Comment system
 duoshuo_shortname: silent
