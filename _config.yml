@@ -80,9 +80,6 @@ archive_generator:
 tag_generator:
   per_page: 10
 
-# Comment system
-duoshuo_shortname: silent
-
 # Links
 links:
   夏之冰雪: http://love.ranshy.com
