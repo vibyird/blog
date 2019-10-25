@@ -19,10 +19,10 @@ tags:
 ```golang
 channel := make(chan int) // 创建通道
 
-go fun(){
-    channel <- 1 // 向通道发送数据
+go fun(){                 // 开启新协程
+    channel <- 1          // 向通道发送数据
 }()
 
-result:= <-channel // 接受通道中的数据
+result:= <-channel        // 接受通道中的数据
 fmt.Println(result)
 ```
