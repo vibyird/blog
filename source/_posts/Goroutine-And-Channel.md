@@ -17,51 +17,40 @@ tags:
 ## 基本操作：发送 & 接收
 
 ```golang
-channel := make(chan int) // 创建Channel
+package main
 
-go fun(){                 // 开启Goroutine
-    channel <- 1          // 向Channel发送数据
-}()
+import "fmt"
 
-result:= <-channel        // 接收Channel中的数据
-fmt.Println(result)
+func main() {
+	channel := make(chan int) // 创建Channel
+	go func() { // 开启Goroutine
+		channel <- 1 // 向Channel发送数据
+	}()
+	result := <-channel // 接收Channel中的数据
+	fmt.Println(result)
+}
 ```
 
 ## select操作
 
 ```golang
-channel := make(chan int) // 创建Channel
 
-go fun(){                 // 开启Goroutine
-    channel <- 1          // 向Channel发送数据
-}()
-
-result:= <-channel        // 接收Channel中的数据
-fmt.Println(result)
 ```
 
 ## for … range操作
 
 ```golang
-channel := make(chan int) // 创建Channel
 
-go fun(){                 // 开启Goroutine
-    channel <- 1          // 向Channel发送数据
-}()
+```
 
-result:= <-channel        // 接收Channel中的数据
-fmt.Println(result)
+## 优雅地实现请求超时
+
+```golang
+
 ```
 
 # 实现Promise（对于熟悉ES6的人）
 
 ```golang
-channel := make(chan int) // 创建Channel
 
-go fun(){                 // 开启Goroutine
-    channel <- 1          // 向Channel发送数据
-}()
-
-result:= <-channel        // 接收Channel中的数据
-fmt.Println(result)
 ```
