@@ -96,7 +96,7 @@ links:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: rsync
-  host: www.medowo.me
-  user: solo
+  host: medowo.net
+  user: vibyird
   root: /var/www/blog.medowo.me
   delete: true
