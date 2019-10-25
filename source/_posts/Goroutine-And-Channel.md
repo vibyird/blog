@@ -14,15 +14,54 @@ tags:
 
 # Goroutine & Channel
 
-## 基本操作
+## 基本操作：发送 & 接收
 
 ```golang
-channel := make(chan int) // 创建通道
+channel := make(chan int) // 创建Channel
 
-go fun(){                 // 开启新协程
-    channel <- 1          // 向通道发送数据
+go fun(){                 // 开启Goroutine
+    channel <- 1          // 向Channel发送数据
 }()
 
-result:= <-channel        // 接受通道中的数据
+result:= <-channel        // 接收Channel中的数据
+fmt.Println(result)
+```
+
+## select操作
+
+```golang
+channel := make(chan int) // 创建Channel
+
+go fun(){                 // 开启Goroutine
+    channel <- 1          // 向Channel发送数据
+}()
+
+result:= <-channel        // 接收Channel中的数据
+fmt.Println(result)
+```
+
+## for … range操作
+
+```golang
+channel := make(chan int) // 创建Channel
+
+go fun(){                 // 开启Goroutine
+    channel <- 1          // 向Channel发送数据
+}()
+
+result:= <-channel        // 接收Channel中的数据
+fmt.Println(result)
+```
+
+# 实现Promise（对于熟悉ES6的人）
+
+```golang
+channel := make(chan int) // 创建Channel
+
+go fun(){                 // 开启Goroutine
+    channel <- 1          // 向Channel发送数据
+}()
+
+result:= <-channel        // 接收Channel中的数据
 fmt.Println(result)
 ```
