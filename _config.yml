@@ -65,6 +65,75 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: next
 
+#################################################################
+###################### NexT Configuration #######################
+#################################################################
+
+theme_config:
+
+  # ============================================================= #
+  # ====================== Scheme Settings ====================== #
+  # ============================================================= #
+  scheme: Gemini
+
+  # ============================================================= #
+  # ===================== Sidebar Settings ====================== #
+  # ============================================================= #
+
+  sidebar:
+    position: right
+    display: post
+    offset: 12
+    onmobile: true
+
+  avatar:
+    url: /images/apple-touch-icon-next.png
+    rounded: true
+    rotated: false
+
+  social:
+    GitHub: https://github.com/vibyird || github
+    E-Mail: mailto:vibyird@gmail.com/ || envelope
+    Company: https://www.ccint.com/
+    MicroBlog: https://www.ccint.com/
+
+  social_icons:
+    enable: true
+    icons_only: true
+    transition: true
+
+  toc:
+    enable: false
+    number: true
+    wrap: true
+
+  # ============================================================= #
+  # ====================== Search Services ====================== #
+  # ============================================================= #
+
+  local_search:
+    enable: true
+    trigger: auto
+    top_n_per_article: 1
+    preload: true
+
+  # ============================================================= #
+  # ======================== Tag Plugins ======================== #
+  # ============================================================= #
+
+  note:
+    style: simple
+    icons: true
+    border_radius: 0
+    light_bg_offset: -3
+
+  tabs:
+    enable: true
+    transition:
+      tabs: true
+      labels: true
+    border_radius: 0
+
 # Category generator plugin
 category_generator:
   per_page: 10
@@ -86,11 +155,6 @@ search:
   field: post
   format: html
   limit: 10000
-
-# Links
-links:
-  夏之冰雪: http://love.ranshy.com
-  Intsig Web: http://jishu.website
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
