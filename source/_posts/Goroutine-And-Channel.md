@@ -14,7 +14,30 @@ tags:
 
 # Goroutine & Channel
 
-## 基本操作：发送 & 接收
+## 创建Goroutine
+
+* 在Golang中，Goroutine是语言级别的支持，只需要通过一个简单的go关键字即可创建Goroutine，十分快捷简单。
+
+```golang
+	go func() { // 开启Goroutine
+		fmt.Println("Hello World!")
+	}()
+```
+
+## 创建Channel
+
+* Channel对象必须使用make()函数进行创建。
+
+
+```golang
+	channel := make(chan int) // 创建Channel 
+```
+
+
+## Channel的发送 & 接收
+
+* 当"<-"发送运算符在Channel对象右边时，代表发送操作。
+* 当"<-"接收运算符在Channel对象左边时，代表接收操作。可以只接收，不赋值；也可以接收完，再通过"="赋值运算符赋值给一个变量。
 
 ```golang
 package main
@@ -37,7 +60,10 @@ func main() {
 
 <!--more-->
 
-## select操作
+## select语句
+
+* select语句由多个带有Channel的发送或接收操作的case组成。
+* 一组select语句执行，只会处理第一个就绪的发送或接收case。
 
 ```golang
 package main
@@ -67,7 +93,9 @@ func main() {
 }
 ```
 
-## for … range操作
+## for … range语句
+
+* for … range语句可以迭代接收Channel中的数据，直到Channel被关闭。
 
 ```golang
 package main
@@ -93,6 +121,9 @@ func main() {
 ```
 
 ## 优雅地实现处理超时
+
+* golang标准库中的time.After()函数的返回值，即是一个channel。
+* 通过和select语句相结合，我们优雅地实现处理超时。
 
 ```golang
 package main
