@@ -19,9 +19,9 @@ tags:
 * 在Golang中，Goroutine是语言级别的支持，只需要通过一个简单的go关键字即可创建Goroutine，十分快捷简单。
 
 ```golang
-	go func() { // 开启Goroutine
-		fmt.Println("Hello World!")
-	}()
+    go func() { // 开启Goroutine
+        fmt.Println("Hello World!")
+    }()
 ```
 
 ## 创建Channel
@@ -30,7 +30,7 @@ tags:
 
 
 ```golang
-	channel := make(chan int) // 创建Channel 
+    channel := make(chan int) // 创建Channel 
 ```
 
 
@@ -43,18 +43,18 @@ tags:
 package main
 
 import (
-	"fmt"
-	"time"
+    "fmt"
+    "time"
 )
 
 func main() {
-	channel := make(chan int) // 创建Channel 
-	go func() { // 开启Goroutine
-		time.Sleep(1000000000)
-		channel <- 1 // 向Channel发送数据
-	}()
-	result := <-channel // 接收Channel中的数据
-	fmt.Println(result)
+    channel := make(chan int) // 创建Channel 
+    go func() { // 开启Goroutine
+        time.Sleep(1000000000)
+        channel <- 1 // 向Channel发送数据
+    }()
+    result := <-channel // 接收Channel中的数据
+    fmt.Println(result)
 }
 ```
 
@@ -69,27 +69,27 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"time"
+    "fmt"
+    "time"
 )
 
 func main() {
-	channel1 := make(chan int) // 创建Channel1
-	channel2 := make(chan int) // 创建Channel2
-	go func() { // 开启Goroutine1
-		time.Sleep(1000000000)
-		channel1 <- 1 // 向Channel1发送数据
-	}()
-	go func() { // 开启Goroutine2
-		time.Sleep(100000000)
-		channel2 <- 2 // 向Channel2发送数据
-	}()
-	select { // 同时等待接收Channel1和Channel2的数据，只要有一个就绪，即完成对应case的处理
-	case result := <-channel1:
-		fmt.Println(result)
-	case result := <-channel2:
-		fmt.Println(result)
-	}
+    channel1 := make(chan int) // 创建Channel1
+    channel2 := make(chan int) // 创建Channel2
+    go func() { // 开启Goroutine1
+        time.Sleep(1000000000)
+        channel1 <- 1 // 向Channel1发送数据
+    }()
+    go func() { // 开启Goroutine2
+        time.Sleep(100000000)
+        channel2 <- 2 // 向Channel2发送数据
+    }()
+    select { // 同时等待接收Channel1和Channel2的数据，只要有一个就绪，即完成对应case的处理
+    case result := <-channel1:
+        fmt.Println(result)
+    case result := <-channel2:
+        fmt.Println(result)
+    }
 }
 ```
 
@@ -101,22 +101,22 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"time"
+    "fmt"
+    "time"
 )
 
 func main() {
-	channel := make(chan int) // 创建Channel
-	go func() {
-		for i := 0; i < 10; i++ {
-			time.Sleep(1000000000)
-			channel <- i // 不断向Channel发送数据
-		}
-		close(channel) // 关闭Channel
-	}()
-	for result := range channel { // 迭代Channel中的数据，并打印出来
-		fmt.Println(result)
-	}
+    channel := make(chan int) // 创建Channel
+    go func() {
+        for i := 0; i < 10; i++ {
+            time.Sleep(1000000000)
+            channel <- i // 不断向Channel发送数据
+        }
+        close(channel) // 关闭Channel
+    }()
+    for result := range channel { // 迭代Channel中的数据，并打印出来
+        fmt.Println(result)
+    }
 }
 ```
 
@@ -129,22 +129,22 @@ func main() {
 package main
 
 import (
-	"fmt"
-	"time"
+    "fmt"
+    "time"
 )
 
 func main() {
-	channel := make(chan int) // 创建Channel
-	go func() { // 开启Goroutine
-		time.Sleep(1000000000)
-		channel <- 1 // 向Channel发送数据
-	}()
+    channel := make(chan int) // 创建Channel
+    go func() { // 开启Goroutine
+        time.Sleep(1000000000)
+        channel <- 1 // 向Channel发送数据
+    }()
 
-	select {
-	case result := <-channel: // 接收Channel中的数据
-		fmt.Println(result)
-	case <-time.After(100000000):
-		fmt.Println("time out")
-	}
+    select {
+    case result := <-channel: // 接收Channel中的数据
+        fmt.Println(result)
+    case <-time.After(100000000):
+        fmt.Println("time out")
+    }
 }
 ```
