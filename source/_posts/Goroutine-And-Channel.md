@@ -1,7 +1,7 @@
 ---
 title: Goroutine & Channel
 date: 2019-10-24 09:28:31
-tags:
+tags: Golang 后端 并发
 ---
 
 # 并发模型
