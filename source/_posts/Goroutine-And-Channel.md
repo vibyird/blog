@@ -1,7 +1,12 @@
 ---
 title: Goroutine & Channel
 date: 2019-10-24 09:28:31
-tags: Golang 后端 并发
+categories:
+- BackEnd
+tags: 
+- Golang
+- BackEnd
+- Concurrency
 ---
 
 # 并发模型
