@@ -164,8 +164,10 @@ search:
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: rsync
+- type: rsync
   host: medowo.net
   user: vibyird
   root: /var/www/blog.medowo.me
   delete: true
+- type: git
+  repo: git@github.com:vibyird/vibyird.github.io.git
