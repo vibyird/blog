@@ -6,13 +6,13 @@
 title: 最大的麦穗
 subtitle:
 description:
-author: Sheng Lu
-language: zh-Hans
+author: Vibyird
+language: zh
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://blog.medowo.me
+url: http://blog.medowo.net
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -163,7 +163,7 @@ deploy:
 - type: rsync
   host: medowo.net
   user: vibyird
-  root: /var/www/blog.medowo.me
+  root: /var/www/blog.medowo.net
   delete: true
 - type: git
   repo: git@github.com:vibyird/vibyird.github.io.git
