@@ -42,7 +42,7 @@ custom_file_path:
 scheme: Gemini
 
 # Dark Mode
-darkmode: false
+darkmode: true
 
 
 # ---------------------------------------------------------------
@@ -729,7 +729,7 @@ utterances:
   # Available values: pathname | url | title | og:title
   issue_term: og:title
   # Available values: github-light | github-dark | preferred-color-scheme | github-dark-orange | icy-dark | dark-blue | photon-dark | boxy-light
-  theme: github-light
+  theme: preferred-color-scheme
 
 # Isso
 # For more information: https://isso-comments.de
