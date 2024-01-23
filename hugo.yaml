@@ -591,7 +591,7 @@ params:
   readingProgress:
     # 是否显示读取进度条
     # If true, will display the read progress bar.
-    enable: false
+    enable: true
     # 进度条开始位置： left | right
     # Available values: left | right
     start: left
@@ -1056,8 +1056,8 @@ params:
   # Use Animate.css to animate everything.
   # For more information: https://animate.style
   motion:
-    enable: false
-    async: false
+    enable: true
+    async: true
     transition:
       # All available transition variants: https://theme-next.js.org/animate/
       postBlock: fadeIn
