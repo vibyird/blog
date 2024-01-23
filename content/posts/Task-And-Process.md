@@ -16,7 +16,7 @@ categories:
 
 <!--more-->
 
-## 任务类型
+### 任务类型
 
 ``` bash
 cmd [arg …]                   # 前台任务
@@ -24,7 +24,7 @@ cmd [arg …]&                  # 后台任务
 cmd1 [arg …] | cmd2 [arg …]   # 多个命令组成的任务
 ```
 
-## 任务查看与管理
+### 任务查看与管理
 
 ``` bash
 ctrl + z                # 将前台任务切换至后台，并暂停
@@ -42,7 +42,7 @@ jobs -x cmd [arg …]     # 将cmd命令中的任务ID转成进程ID，并执行
 \+ 代表最近被放到背景的工作号码
 \- 代表最近最后第二个被放置到背景中的工作号码
 
-## 进程、进程组和会话
+### 进程、进程组和会话
 
 {% asset_img Process.png Process, Process group & Session %}
 
@@ -53,7 +53,7 @@ jobs -x cmd [arg …]     # 将cmd命令中的任务ID转成进程ID，并执行
 5. 每个会话可以连接一个控制终端(control terminal)。当控制终端有输入输出时，都传递给该会话的前台进程组。由终端产生的信号，比如CTRL+Z， CTRL+\，会传递到前台进程组。
 6. 会话的意义在于将多个job(进程组)囊括在一个终端，并取其中的一个job(进程组)作为前台，来直接接收该终端的输入输出以及终端信号。 其他工作在后台运行。
 
-# Hang Up
+## Hang Up
 
 在Unix的早期版本中，每个终端都会通过modem和系统通讯。当用户logout时，modem就会挂断（hang up）电话。同理，当modem断开连接时，就会给终端发送hangup信号来通知其关闭所有子进程。
 
@@ -68,11 +68,11 @@ jobs -x cmd [arg …]     # 将cmd命令中的任务ID转成进程ID，并执行
 	- setsid cmd [arg …]
 	- (cmd [arg …] &)
 
-# Daemon
+## Daemon
 
 在多任务操作系统中，Daemon是作为后台进程运行，而非在一个交互的环境的控制下运行的程度。传统上，Daemon程序会以d作为程序后缀，例如：httpd（ Apache服务器）、sshd（ SSH服务器）等。
 
-## Daemon进程特点
+### Daemon进程特点
 
 + 断开控制终端的连接
 + 成为会话的领头进程
@@ -83,14 +83,14 @@ jobs -x cmd [arg …]     # 将cmd命令中的任务ID转成进程ID，并执行
 + 关闭所有从父进程继承过来的文件描述符，包括标准输出、标准错误
 + 使用日志文件控制台或/dev/null作为标准输入、标准输出和标准错误
 
-## Shell实现原理
+### Shell实现原理
 
 + setsid命令，可以让一个进程变成一个新的会话进程
 + cd命令，可以更改进程的工作目录
 + umask命令，可以调整进程的umask模式
 + <>&-，可以关闭文件描述符
 
-## Demo代码
+### Demo代码
 
 ``` bash
 #!/usr/bin/env bash

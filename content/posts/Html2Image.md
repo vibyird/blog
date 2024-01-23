@@ -10,13 +10,13 @@ categories:
 
 如何实现一个简单的HTML生成Image的服务？
 
-# 实现要素：
+## 实现要素：
 1. Html渲染引擎 + 截图
 1. Web Server
 
 <!--more-->
 
-# 实现方案
+## 实现方案
 
 PhantomJS
 
@@ -30,7 +30,7 @@ PhantomJS
 * webserver模块
   * 用于实现WebServer
 
-## 问题&解决
+### 问题&解决
 
 1. PhantomJS的wiki定义了renderBuffer方法但是没有实现？
 使用renderBase64方法获取图片数据。
@@ -39,9 +39,9 @@ PhantomJS
 1. 渲染的图片上的文字显示效果差？
 在系统中安装适当的字体。
 
-# 实现Demo
+## 实现Demo
  
-## Base64解码
+### Base64解码
 
 ```javascript
 
@@ -78,7 +78,7 @@ var Base64Binary = {
 
 ```
 
-## Html2Image服务
+### Html2Image服务
 
 ```javascript
 
