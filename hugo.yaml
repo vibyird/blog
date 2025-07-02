@@ -606,10 +606,10 @@ params:
   codeblock:    
     # 支持样式类型： default | flat | mac
     # Available values: default | flat | mac
-    style: default
+    style: mac
     # 在代码块上添加拷贝按钮
     # Add copy button on codeblock
-    copyBtn: false
+    copyBtn: true
     # 代码块的默认显示行高
     # Default max height of codeblock.
     maxHeight: 200
