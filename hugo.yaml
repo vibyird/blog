@@ -20,7 +20,7 @@ title: 最大的麦穗
 # Theme name
 theme: next
 # 站点默认的语言和代码
-# Default laguage & code for website
+# Default language & code for website
 defaultContentLanguage: zh-cn
 languageCode: zh-CN
 # 多语言配置
@@ -66,7 +66,6 @@ languageCode: zh-CN
 #           name: Math Formula
 #           pageRef: /post/10-math-formula
 #           weight: 2   
-#           parent: example
 #           parent: example
 #         - identifier: flow-charts
 #           name: Flow Charts
@@ -117,7 +116,7 @@ pagination:
 # 开启支持表情符号
 # Enable Emoji support
 enableEmoji: true
-# 让 Makedown 文档支持 HTML 语法，高亮，文章目录等功能
+# 让 Markdown 文档支持 HTML 语法，高亮，文章目录等功能
 # Make markdown content support HTML syntax, highlight, toc etc.
 markup:
   goldmark:
@@ -135,7 +134,7 @@ markup:
   tableOfContents:
     # 开始/结束标题级别：1-6 (建议从2开始)
     # Heading title level of start or end: 1-6
-    # Recommand start at 2
+    # Recommended startLevel: 2
     startLevel: 2
     endLevel: 4
 
@@ -203,27 +202,27 @@ menus:
   main:
     - identifier: home
       name: 首页
-      pageref: /
+      pageRef: /
       pre: home
       weight: 1
     # - identifier: about
     #   name: 关于
-    #   pageref: /about.html
+    #   pageRef: /about
     #   pre: user
     #   weight: 2
     - identifier: tags
       name: 标签
-      pageref: /tags
+      pageRef: /tags
       pre: tags
       weight: 3
     - identifier: categories
       name: 分类
-      pageref: /categories
+      pageRef: /categories
       pre: table-cells
-      weight: 3
+      weight: 4
     - identifier: archives
       name: 归档
-      pageref: /archives
+      pageRef: /archives
       pre: archive
       weight: 5
 
@@ -234,7 +233,7 @@ menus:
 params:
   # 需要显示文章的部分，即content目录下的文件夹名称
   # Sections for show in home & archive page 
-  # and it's forlder name which under content
+  # and it's folder name which under content
   mainSections: ["posts"]
   # 年，月，日及时间的格式化样式
   # Format style for year,month,date & time
@@ -298,6 +297,13 @@ params:
     # 文章底部显示
     # Show in post footer
     post: false
+    # 是否为 AI 撰写
+    # Is AI write or not
+    byai: false
+    # NotByAI icon 颜色，可选配置 black | white
+    # NotByAI icon color. Available values: black | white
+    notByAiIconColor: "white"
+
 
   # OG SEO 配置
   # Open graph settings
@@ -336,7 +342,7 @@ params:
     # Manual define the sidebar width. If commented, will be default for:
     # Muse | Mist: 320
     # Pisces | Gemini: 240
-    width: 240
+    width: 256
 
     # 侧边栏的显示方式，可选值：
     #  - post    默认在文章页面展开显示
@@ -461,10 +467,7 @@ params:
   # 站点底部设置
   # Footer Settings
   # ---------------------------------------------------------------
-  footer:
-    # 启动谷歌翻译功能
-    # Enable google translate in footer
-    translate: false
+  footer:    
     # 站点开始年份，默认为当下时间的年份
     # Specify the year when the site was setup. 
     # If not defined, current year will be used.
@@ -523,8 +526,11 @@ params:
             url: /imgs/vendors/upyun.png
             width: 43
           link: https://upyun.com
-        - name: Webify
-          link: https://webify.cloudbase.net
+        - name: Github
+          link: https://github.com
+          image:
+            url: /imgs/vendors/github.svg
+            width: 14
 
 
   # ---------------------------------------------------------------
@@ -558,14 +564,14 @@ params:
     # 是否开启评论数显示
     comments: 
       enable: false
-      # 评论统计插件，暂只支持waline和waline3
-      # Comment counter plugin, only support waline and waline3
+      # 评论统计插件，暂只支持waline | waline3 | twikoo
+      # Comment counter plugin, only support waline | waline3 | twikoo
       plugin: waline
     # 是否开启页面访问数显示
     views:
       enable: false
-      # 页面访问统计插件，支持busuanzi, waline, waline3
-      # Page views counter plugin, support: busuanzi, waline, waline3
+      # 页面访问统计插件，支持busuanzi, waline, waline3, twikoo (其中 twikoo 仅支持文章页显示)
+      # Page views counter plugin, support: busuanzi, waline, waline3, twikoo (twikoo only support in post page)
       plugin: busuanzi
     # 是否开启过期提示
     # Expired tip
@@ -621,7 +627,7 @@ params:
     # If true, the donate type title will with animation.
     animation: false
     # 捐赠信息的描述，支持 HTML 语法
-    # Comment for donate and suppport HTML syntax
+    # Comment for donate and support HTML syntax
     comment: '<i class="fa-solid fa-mug-hot"></i>请我喝杯咖啡吧 ヾ(^▽^*)))'
     # 捐赠方式
     # 用例： `名称:图像地址`
@@ -641,7 +647,7 @@ params:
     #channel0: Twitter || https://twitter.com/username || fab fa-twitter
     #channel1: Telegram || https://t.me/channel_name || fab fa-telegram
     #channel2: WeChat || /images/wechat_channel.jpg || fab fa-weixin
-    #channel3: RSS || /atom.xml || fa fa-rss
+    #channel3: RSS || /rss.xml || fa fa-rss
 
   # 文章的在线编辑
   # Post edit
@@ -686,12 +692,15 @@ params:
     # 在代码块上添加拷贝按钮
     # Add copy button on codeblock
     copyBtn: false
+    # 代码块的默认显示行高
+    # Default max height of codeblock.
+    maxHeight: 200
 
   # 返回顶部设置
   # Backtop settings
   backTop:
     # 开启返回顶部按钮显示
-    # If true, will display backtop button in buttom.
+    # If true, will display backtop button in bottom.
     enable: true
     # 在侧边栏显示返回顶部按钮
     # Back to top in sidebar.
@@ -719,7 +728,7 @@ params:
     # Change the color of progress bar, using Hex Code.
     color: "#37c6c0"
     # 进度条的高度
-    # Hight of the read progress bar.
+    # Height of the read progress bar.
     height: 3px
 
   # 书签功能
@@ -915,11 +924,15 @@ params:
     # 设置你要显示的2个评论插件，`weight` 数字越小越靠前
     # `name` 参数名可选值：livere | waline | waline3 | utterances | artalk | giscus
     # Modify texts or order for any naves, here are some examples.
-    nav:
-      - name: giscus
-        title: Giscus
-        color: "#27ae60"
-        weight: 1
+    # nav:
+    #   - name: waline
+    #     title: Waline
+    #     color: "#27ae60"
+    #     weight: 1
+    #   - name: giscus
+    #     title: Giscus
+    #     color: "#886ce4"
+    #     weight: 2
 
   # Waline 评论插件
   # 更多配置信息请参考：https://waline.js.org/
@@ -974,10 +987,10 @@ params:
   # utterances:
   #   # Github 仓库地址，格式：用户名/仓库名称
   #   # Github repository owner and name
-  #   repo: vibyird/vibyird.github.io
+  #   repo: username/repo-name
   #   # 问题标题的模式，可选值：pathname | url | title | og:title
   #   # Available values: pathname | url | title | og:title
-  #   issueTerm: og:title
+  #   issueTerm: pathname
   #   # 问题的标签分类
   #   # Label flag for Github issues
   #   label: comments
@@ -1019,6 +1032,18 @@ params:
     # 主题可选值： light | light_high_contrast | light_protanopia | light_tritanopia | dark | dark_high_contrast | dark_protanopia | dark_tritanopia | dark_dimmed | transparent_dark | preferred_color_scheme
     # Available values: light | light_high_contrast | light_protanopia | light_tritanopia | dark | dark_high_contrast | dark_protanopia | dark_tritanopia | dark_dimmed | transparent_dark | preferred_color_scheme
     theme: preferred_color_scheme
+
+  # # twikoo 评论插件
+  # # 更多配置信息请参考：https://twikoo.js.org
+  # # Twikoo comments system
+  # # For more information: https://twikoo.js.org
+  # twikoo:
+  #   # 必填项，腾讯云环境填 envId；其他填写自己的后端地址
+  #   # Required, fill in envId for Tencent Cloud environment; fill in your own backend address for others
+  #   envid: 'http://192.168.31.50:8080'
+  #   # 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；其他可以不填写
+  #   # Region, default is ap-shanghai, fill in ap-shanghai or ap-guangzhou for Tencent Cloud environment; others can be left blank
+  #   region: 'ap-guangzhou'
 
 
   # ---------------------------------------------------------------
@@ -1067,6 +1092,9 @@ params:
     # 谷歌统计
     # Google Analytics
     #google: #<anaytics_id>
+    # 谷歌统计
+    # Cloudflare Analytics
+    #cloudflare: #<cloudflare_id>
     # 不蒜子统计
     # Show Views / Visitors of the website / page with busuanzi.
     # For more information: http://ibruce.info/2015/04/04/busuanzi/
@@ -1189,7 +1217,7 @@ params:
       postBlock: fadeIn
       postHeader: fadeInDown
       postBody: fadeInDown
-      collHeader: fadeInLeft
+      collHeader: slideInRight
       # 侧边样效果 只有在 Pisces | Gemini 模式下才支持
       # Only for Pisces | Gemini.
       sidebar: fadeInUp
