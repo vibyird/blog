@@ -1,0 +1,6 @@
+.post-body h1,
+.post-body h2,
+.post-body h3,
+.post-body h4 {
+  border-bottom: none;
+}
