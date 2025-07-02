@@ -214,7 +214,7 @@ params:
     sidebar: false
     # 文章底部显示
     # Show in post footer
-    post: false
+    post: true
     # 是否为 AI 撰写
     # Is AI write or not
     byai: false
