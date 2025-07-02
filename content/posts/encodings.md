@@ -24,7 +24,7 @@ tags:
 * 定长编码：UCS-2、UTF-32/UCS-4
 * 变长编码：UTF-8、UTF-16
 
-<!-- more -->
+<!--more-->
 
 ### ISO/IEC 8859
 
