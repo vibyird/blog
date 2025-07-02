@@ -614,7 +614,7 @@ params:
     endLineTip: "~ 我可是有底线的哟 ~"
     # 是否使用小图标，默认使用 # 符号表示标签
     # Use icon instead of the symbol # to indicate the tag
-    tagIcon: true
+    tagIcon: false
 
   # 捐赠信息设置
   # Donate (Sponsor) settings.
@@ -714,7 +714,7 @@ params:
   readingProgress:
     # 是否显示读取进度条
     # If true, will display the read progress bar.
-    enable: true
+    enable: false
     # 进度条开始位置： left | right
     # Available values: left | right
     start: left
