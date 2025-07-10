@@ -367,7 +367,7 @@ params:
     enable: true
     # 自动设置列表的数字
     # Automatically add list number to toc.
-    number: true
+    number: false
     # 开启自动换行显示
     # If true, all words will placed on next lines 
     # if header width longer then sidebar width.
@@ -606,7 +606,7 @@ params:
   codeblock:    
     # 支持样式类型： default | flat | mac
     # Available values: default | flat | mac
-    style: mac
+    style: default
     # 在代码块上添加拷贝按钮
     # Add copy button on codeblock
     copyBtn: true
@@ -923,7 +923,7 @@ params:
   giscus:
     # Github 仓库地址，格式：用户名/仓库名称
     # Github repository owner and name
-    repo: vibyird/vibyird.github.io
+    repo: vibyird/blog
     # Giscus 生成的仓库 Id
     # Generate repository Id from Giscus
     repoId: MDEwOlJlcG9zaXRvcnkyMTkxNzk5NDM=
