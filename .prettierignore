@@ -1,0 +1,16 @@
+*.jpg
+*.jpeg
+*.png
+*.ico
+
+.gitmodules
+
+.gitignore
+.prettierignore
+.vercelignore
+
+LICENSE
+
+themes
+
+hugo.yaml
